@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "CalculadoraHP",
+    "name": "Vintage 25 Calc",
     "slug": "CalculadoraHP",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,15 +8,13 @@
     "scheme": "calculadorahp",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/images/hp25-icon.png"
     },
     "android": {
-      "package": "com.patricio.calculadorahp",
+      "package": "com.patricio.vintage25calc",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "backgroundColor": "#121212",
+        "foregroundImage": "./assets/images/hp25-icon.png"
       },
       "predictiveBackGestureEnabled": false
     },
@@ -35,7 +33,15 @@
             "imageWidth": 76
           }
         }
-      ]
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+        }
+      ],
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true,
