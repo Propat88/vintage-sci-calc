@@ -1,20 +1,20 @@
 {
   "expo": {
-    "name": "Vintage 25 Calc",
-    "slug": "CalculadoraHP",
+    "name": "Vintage Sci Calculator",
+    "slug": "vintage-sci-calc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/hp25-icon.png",
-    "scheme": "calculadorahp",
+    "icon": "./assets/images/vintage25-icon.png",
+    "scheme": "vintagescicalc",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/images/hp25-icon.png"
+      "icon": "./assets/images/vintage25-icon.png"
     },
     "android": {
-      "package": "com.patricio.vintage25calc",
+      "package": "com.patricio.vintagescicalc",
       "adaptiveIcon": {
         "backgroundColor": "#121212",
-        "foregroundImage": "./assets/images/hp25-icon.png"
+        "foregroundImage": "./assets/images/vintage25-icon.png"
       },
       "predictiveBackGestureEnabled": false
     },
@@ -27,21 +27,20 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
-          "android": {
-            "image": "./assets/images/splash-icon.png",
-            "imageWidth": 76
-          }
+          "backgroundColor": "#000000"
         }
       ],
+      "expo-font",
+      "expo-image",
+      "expo-status-bar",
+      "expo-web-browser",
       [
         "react-native-google-mobile-ads",
         {
-          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
-          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+          "androidAppId": "ca-app-pub-8321683523431977~3740848732",
+          "iosAppId": "ca-app-pub-8321683523431977~3740848732"
         }
-      ],
-      "expo-font"
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
