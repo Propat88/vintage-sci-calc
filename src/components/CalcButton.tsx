@@ -1,5 +1,6 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { TouchableOpacity, Text, StyleSheet, type TextStyle, type ViewStyle } from 'react-native';
+import { playClick } from '../utils/clickSound';
 
 export interface CalcButtonProps {
   label: string;
@@ -22,6 +23,11 @@ export const CalcButton = memo(function CalcButton({
   style,
   textStyle,
 }: CalcButtonProps) {
+  const handlePress = useCallback(() => {
+    playClick();
+    onPress();
+  }, [onPress]);
+
   let btnStyle = styles.btnNumeric;
   let txtStyle = styles.txtWhite;
 
@@ -40,7 +46,7 @@ export const CalcButton = memo(function CalcButton({
         disabled && { opacity: 0.1 },
         style,
       ]}
-      onPress={onPress}
+      onPress={handlePress}
       activeOpacity={0.6}
       disabled={disabled}
       accessible={true}
