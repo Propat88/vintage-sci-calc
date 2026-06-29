@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { View, Text } from 'react-native';
+import { useGdprConsent } from '../hooks/useGdprConsent';
 
 let BannerAd: any = null;
 let BannerAdSize: any = null;
@@ -17,7 +18,16 @@ const adUnitId = TestIds
   : '';
 
 export const AdMobPlaceholder = memo(function AdMobPlaceholder() {
-  if (!BannerAd) {
+  const { consentLoaded, canRequestAds } = useGdprConsent();
+
+  if (!BannerAd || !canRequestAds) {
+    if (!consentLoaded) {
+      return (
+        <View style={{ minHeight: 60, alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ color: '#333', fontSize: 9 }}>CARGANDO...</Text>
+        </View>
+      );
+    }
     return (
       <View style={{ minHeight: 60, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={{ color: '#444', fontSize: 10, fontWeight: 'bold' }}>
